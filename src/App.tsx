@@ -27,7 +27,7 @@ function PlayerList({ players }: PlayerListProps) {
   return (
     <ul>
       {players.map((player) => {
-        return <PlayerCard player={player} />;
+        return <PlayerCard key={player.espnId} player={player} />;
       })}
     </ul>
   )
@@ -39,12 +39,13 @@ function PlayerList({ players }: PlayerListProps) {
 interface PlayerCardProps {
   player: Player;
 }
-function PlayerCard({player}: PlayerCardProps) {
-  const { firstName, lastName, team } = player;
+function PlayerCard({ player }: PlayerCardProps) {
+  const { firstName, lastName, team, espnId } = player;
+  console.log(espnId);
   return (
     <div className="flex flex-row gap-3 items-center justify-between px-2 py-1 border-2 border-slate-500 hover:border-sky-500 rounded bg-opacity-1 bg-slate-700">
       <div className="flex flex-row gap-3 items-center">
-        <Headshot espnId={1}/>
+        <Headshot espnId={espnId}/>
         <span className="text-white font-semibold">{`${firstName[0]}. ${lastName}`}</span>
       </div>
       <span className="text-gray-400">{team.toUpperCase()}</span>
@@ -53,7 +54,6 @@ function PlayerCard({player}: PlayerCardProps) {
 }
 
 
-const IMG = "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png"
 const SCALE = 0.4
 const W = Math.floor(350 * SCALE)
 const H = Math.floor(254 * SCALE)
@@ -61,11 +61,11 @@ interface HeadshotProps {
   espnId: number;
 }
 function Headshot({ espnId }: HeadshotProps) {
-  const img_url = "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1966.png"
+  const img_url = `https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/${espnId}.png`
 
   return (
       <figure className="rounded-full overflow-hidden border-slate-500 border-2">
-      <img src={`${img_url}&w=${W}&h=${H}`} className="bg-gray-200 object-cover bg-opacity-1 w-12 h-12" />
+      <img src={`${img_url}&w=${W}&h=${H}`} className="bg-gray-300 object-cover bg-opacity-1 w-12 h-12" />
     </figure>
   )
 }

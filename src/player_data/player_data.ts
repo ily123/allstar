@@ -5,6 +5,7 @@ export type Player = {
   position: "F" | "G" | "C";
   role: "starter" | "reserve" | "captain";
   pick: number;
+  espnId: number;
 }
 
 export const players: Player[] = [
@@ -15,6 +16,7 @@ export const players: Player[] = [
     position: "F",
     role: "captain",
     pick: 0,
+    espnId: 1966,
   },
   {
     firstName: "Nikola",
@@ -23,6 +25,7 @@ export const players: Player[] = [
     position: "F",
     role: "starter",
     pick: 21,
+    espnId: 3112335,
   },
   {
     firstName: "Joel",
@@ -31,6 +34,7 @@ export const players: Player[] = [
     position: "C",
     role: "starter",
     pick: 15,
+    espnId: 3059318,
   },
   {
     firstName: "Kyrie",
@@ -39,6 +43,7 @@ export const players: Player[] = [
     position: "G",
     role: "starter",
     pick: 17,
+    espnId: 6442,
   },
   {
     firstName: "Luka",
@@ -47,6 +52,7 @@ export const players: Player[] = [
     position: "G",
     role: "starter",
     pick: 19,
+    espnId: 3945274,
   },
   {
     firstName: "Anthony",
@@ -55,6 +61,7 @@ export const players: Player[] = [
     position: "F",
     role: "reserve",
     pick: 2,
+    espnId: 4594268,
   },
   {
     firstName: "Jaylen",
@@ -63,6 +70,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 4,
+    espnId: 3917376,
   },
   {
     firstName: "Paul",
@@ -71,6 +79,7 @@ export const players: Player[] = [
     position: "F",
     role: "reserve",
     pick: 6,
+    espnId: 4251,
   },
   {
     firstName: "Tyrese",
@@ -79,6 +88,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 8,
+    espnId: 4396993,
   },
   {
     firstName: "Julius",
@@ -87,6 +97,7 @@ export const players: Player[] = [
     position: "F",
     role: "reserve",
     pick: 10,
+    espnId: 3064514,
   },
   {
     firstName: "De'Aaron",
@@ -95,6 +106,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 12,
+    espnId: 4066259,
   },
   {
     firstName: "Jaren",
@@ -103,6 +115,7 @@ export const players: Player[] = [
     position: "F",
     role: "reserve",
     pick: 14,
+    espnId: 4277961,
   },
   {
     firstName: "Giannis",
@@ -111,6 +124,7 @@ export const players: Player[] = [
     position: "F",
     role: "captain",
     pick: 0,
+    espnId: 3032977,
   },
   {
     firstName: "Lauri",
@@ -119,6 +133,7 @@ export const players: Player[] = [
     position: "F",
     role: "starter",
     pick: 22,
+    espnId: 4066336,
   },
   {
     firstName: "Donovan",
@@ -127,6 +142,7 @@ export const players: Player[] = [
     position: "G",
     role: "starter",
     pick: 20,
+    espnId: 3908809,
   },
   {
     firstName: "Ja",
@@ -135,6 +151,7 @@ export const players: Player[] = [
     position: "G",
     role: "starter",
     pick: 18,
+    espnId: 4279888,
   },
   {
     firstName: "Jayson",
@@ -143,6 +160,7 @@ export const players: Player[] = [
     position: "G",
     role: "starter",
     pick: 16,
+    espnId: 4065648,
   },
   {
     firstName: "Damiam",
@@ -151,6 +169,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 1,
+    espnId: 6606,
   },
   {
     firstName: "Jrue",
@@ -159,6 +178,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 3,
+    espnId: 3995,
   },
   {
     firstName: "Shai",
@@ -167,6 +187,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 5,
+    espnId: 4278073,
   },
   {
     firstName: "DeMar",
@@ -175,6 +196,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 7,
+    espnId: 3978,
   },
   {
     firstName: "Pascal",
@@ -183,6 +205,7 @@ export const players: Player[] = [
     position: "G",
     role: "reserve",
     pick: 9,
+    espnId: 3149673,
   },
   {
     firstName: "Bam",
@@ -191,6 +214,7 @@ export const players: Player[] = [
     position: "C",
     role: "reserve",
     pick: 11,
+    espnId: 4066261,
   },
   {
     firstName: "Domantas",
@@ -199,5 +223,6 @@ export const players: Player[] = [
     position: "C",
     role: "reserve",
     pick: 13,
+    espnId: 3155942,
   },
 ]
