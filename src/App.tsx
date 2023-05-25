@@ -7,15 +7,55 @@ function App() {
   //  player card
   //  team header
   //  drop area
+  const [cap1, cap2] = players.filter((p) => p.role === "captain")
+  const availablePlayers = players.filter((p) => p.role !== "captain")
+
+  const teamOne = Array(11).fill(null)
+  const teamTwo = Array(11).fill(null)
+  
   return (
     <main className="flex flex-col pt-10 items-center">
       <h1 className="text-4xl max-sm:text-3xl font-light font-mono text-gray-100">
         NBA Allstar 2023
       </h1>
-      <PlayerList players={players} />
+
+
+      <section className="flex flex-row gap-10">
+        <PlayerList players={availablePlayers} />
+        <Team captain={cap1} roster={teamOne} picksFirst={true}/>
+        <Team captain={cap2} roster={teamTwo} />
+      </section>
     </main>
   )
 
+}
+
+interface TeamSlotProps {
+  player: Player | null;
+  pickNumber: number;
+}
+function TeamSlot({player, pickNumber}: TeamSlotProps) {
+  
+  return (
+    player ? <PlayerCard player={player}/> : <div className="text-white font-bold">{pickNumber}</div>
+  )
+}
+
+interface TeamProps {
+  captain: Player
+  roster: Player[]  
+  picksFirst?: boolean 
+}
+function Team({captain, roster, picksFirst = false}: TeamProps){
+  return (
+    <ul>
+      <PlayerCard player={captain}/>
+      {roster.map((player, index) => {
+        const pickNumber = 2*index + Number(!picksFirst) + 1
+        return <TeamSlot player={player} pickNumber={pickNumber}/>
+      })}
+    </ul>
+  );
 }
 
 /** Returns list of players available to pick. */
