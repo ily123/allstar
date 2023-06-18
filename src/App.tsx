@@ -1,14 +1,35 @@
 import { players, Player } from "./player_data/player_data.js"
+import { useReducer } from "react";
+
+const initialState = {
+  availablePlayers: players.filter((p) => p.role !== "captain").map((p) => p.userPick = null)
+}
+
+const ASSIGN = 'action/assign';
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case ASSIGN:
+      const { pickedPlayer, userPick } = action.payload;
+      const playerState = {...state}
+      playerState.forEach((player) => {
+        if (player.Id === pickedPlayer.Id) {
+          player.userPick = userPick;
+	}
+        if (player.userPick === pick) {
+	  player.userPick = null;
+	}
+      })
+      return playerState
+    default:
+      return state
+  }
+}
+
+
 
 function App() {
-  // components:
-  //
-  //
-  //  player card
-  //  team header
-  //  drop area
   const [cap1, cap2] = players.filter((p) => p.role === "captain")
-  const availablePlayers = players.filter((p) => p.role !== "captain")
 
   const teamOne = Array(11).fill(null)
   const teamTwo = Array(11).fill(null)
@@ -35,7 +56,6 @@ interface TeamSlotProps {
   pickNumber: number;
 }
 function TeamSlot({player, pickNumber}: TeamSlotProps) {
-  
   return (
     player ? <PlayerCard player={player}/> : <div className="text-white font-bold">{pickNumber}</div>
   )
